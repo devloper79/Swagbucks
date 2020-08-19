@@ -220,7 +220,7 @@ class Bot(discord.Client):
         if message.author == self.user or message.guild == None:
             return
 
-        if message.content.lower() == "+":
+        if message.content.lower() == "sb":
             await message.delete()
             if BOT_OWNER_ROLE in [role.name for role in message.author.roles]:
                 self.embed_msg = None
@@ -242,7 +242,7 @@ class Bot(discord.Client):
           if BOT_OWNER_ROLE in [role.name for role in message.author.roles]:
            embed = discord.Embed(title="**__Swagbucks__**", description="**Private Bot**", color=0x0000FF)
            embed.add_field(name="__Game__", value="*Swagbucks Live*", inline=False)
-           embed.add_field(name="__Bot Command__", value="+", inline=False)
+           embed.add_field(name="__Bot Command__", value="sb", inline=False)
            embed.add_field(name="__Made By__", value="*Anonymous*", inline=False)
            await message.channel.send(embed=embed)
 
@@ -270,7 +270,7 @@ def bot_with_cyclic_update_process(update_event, answer_scores):
     upd_thread.start()
 
     loop = asyncio.get_event_loop()
-    loop.create_task(bot.start('NzM5NDTkasiBs2csb2354sk1.XyasKQ.E-Fajk51cs56afCT-a-Lm0TopUtg8'))
+    loop.create_task(bot.start('NzQ1NDU3ODgzMjg5ODc4NjAx.XzyDwQ.-b8gx4I3DvyFWfXnigq2acNxix4'))
     loop.run_forever()
 
 
