@@ -1,1 +1,1 @@
-worker: python hq1.py
+worker: python swagiq.py
