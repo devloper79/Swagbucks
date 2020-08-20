@@ -136,7 +136,7 @@ class Bot(discord.Client):
         self.answer_scores = answer_scores
 
         # embed creation
-        self.embed=discord.Embed(title="__**SWAGBUCKS LIVE**__", description="**trivia edges pro**",color=0xFF0000)
+        self.embed=discord.Embed(title="__**SWAGBUCKS LIVE**__", description="**Stardom**",color=0xFF0000)
         self.embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/738654832489678568/98fae5dd7d6ae2b2078b851a0c2a45d8.png?size=256")
         self.embed.add_field(name="**Answer 1**", value="0.0", inline=False)
         self.embed.add_field(name="**Answer II**", value="0.0", inline=False)
