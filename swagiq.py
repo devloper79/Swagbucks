@@ -142,7 +142,7 @@ class Bot(discord.Client):
         self.embed.add_field(name="**Answer II**", value="0.0", inline=False)
         self.embed.add_field(name="**Answer III**", value="0.0", inline=False)
         self.embed.add_field(name="Best Answer",value="<a:loading:695158657565851658>")
-        self.embed.set_footer(text=f"Swagbucks", \
+        self.embed.set_footer(text=f"Developed by Saini Saab", \
             icon_url="https://cdn.discordapp.com/emojis/65144659163194133.gif?v=1")
         #await self.bot.add_reaction(embed,':spy:')
 
