@@ -76,7 +76,7 @@ class SelfBot(discord.Client):
 
     async def on_ready(self):
         print("======================")
-        print("Swagbucks Bot")
+        print("Hq Bot")
         print("Connected to discord.")
         print("User: " + self.user.name)
         print("ID: " + str(self.user.id))
@@ -134,13 +134,13 @@ class Bot(discord.Client):
         self.answer_scores = answer_scores
 
         # embed creation
-        self.embed=discord.Embed(title="__**SWAGBUCKS LIVE**__", description="**Stardom**",color=0xFF0000)
+        self.embed=discord.Embed(title="__**HQ TRIVIA LIVE**__", description="**15invites to get link**",color=0xFF0000)
         self.embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/738654832489678568/98fae5dd7d6ae2b2078b851a0c2a45d8.png?size=256")
         self.embed.add_field(name="**Answer 1**", value="0.0", inline=False)
         self.embed.add_field(name="**Answer II**", value="0.0", inline=False)
         self.embed.add_field(name="**Answer III**", value="0.0", inline=False)
         self.embed.add_field(name="Best Answer",value="<a:loading:695158657565851658>")
-        self.embed.set_footer(text=f"Swagbucks", \
+        self.embed.set_footer(text=f"Daman saini#0605", \
             icon_url="https://cdn.discordapp.com/emojis/65144659163194133.gif?v=1")
         #await self.bot.add_reaction(embed,':spy:')
 
@@ -203,14 +203,14 @@ class Bot(discord.Client):
 
     async def on_ready(self):
         print("==============")
-        print("Swagbucks")
+        print("HQ")
         print("Connected to discord.")
         print("User: " + self.user.name)
         print("ID: " + str(self.user.id))
 
         await self.clear_results()
         await self.update_embeds()
-        await self.change_presence(activity=discord.Game(name='Swagbucks Live...'))
+        await self.change_presence(activity=discord.Game(name='Hq is Live with daman saini#0605...'))
 
     async def on_message(self, message):
 
@@ -218,7 +218,7 @@ class Bot(discord.Client):
         if message.author == self.user or message.guild == None:
             return
 
-        if message.content.lower() == "sb":
+        if message.content.lower() == "h":
             await message.delete()
             if BOT_OWNER_ROLE in [role.name for role in message.author.roles]:
                 self.embed_msg = None
@@ -233,14 +233,14 @@ class Bot(discord.Client):
                 self.embed_channel_id = message.channel.id
 
             else:
-                await message.channel.send("**Lol** You Not Have permission To Use This **cmd!** :stuck_out_tongue_winking_eye:")
+                await message.channel.send("**Lol** You Not Have permission fetch To Use This h **cmd!** :stuck_out_tongue_winking_eye:")
             return
 
         if message.content.startswith('&help'):
           if BOT_OWNER_ROLE in [role.name for role in message.author.roles]:
-           embed = discord.Embed(title="**__Swagbucks__**", description="**Private Bot**", color=0x0000FF)
-           embed.add_field(name="__Game__", value="*Swagbucks Live*", inline=False)
-           embed.add_field(name="__Bot Command__", value="sb", inline=False)
+           embed = discord.Embed(title="**__HQ__**", description="**Private Bot**", color=0x0000FF)
+           embed.add_field(name="__Game__", value="*HQ Live*", inline=False)
+           embed.add_field(name="__Bot Command__", value="h", inline=False)
            embed.add_field(name="__Made By__", value="*Anonymous*", inline=False)
            await message.channel.send(embed=embed)
 
