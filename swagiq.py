@@ -31,9 +31,9 @@ oot_channel_id_list = [
 
 answer_pattern = re.compile(r'(not|n)?([1-3]{1})(\?)?(cnf|c|w)?(\?)?$', re.IGNORECASE)
 
-apgscore = 1000
-nomarkscore = 400
-markscore = 400
+apgscore = 10000
+nomarkscore = 5000
+markscore = 5000
 
 async def update_scores(content, answer_scores):
     global answer_pattern
@@ -76,7 +76,7 @@ class SelfBot(discord.Client):
 
     async def on_ready(self):
         print("======================")
-        print("Hq Bot")
+        print("Moolah Bot")
         print("Connected to discord.")
         print("User: " + self.user.name)
         print("ID: " + str(self.user.id))
@@ -134,11 +134,11 @@ class Bot(discord.Client):
         self.answer_scores = answer_scores
 
         # embed creation
-        self.embed=discord.Embed(title="__**HQ TRIVIA LIVE**__", description="**15invites to get link**",color=0xFF0000)
+        self.embed=discord.Embed(title="__**Moolah**__", description="**HQ LIVE**",color=0xFF0000)
         self.embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/738654832489678568/98fae5dd7d6ae2b2078b851a0c2a45d8.png?size=256")
-        self.embed.add_field(name="**Answer 1**", value="0.0", inline=False)
-        self.embed.add_field(name="**Answer II**", value="0.0", inline=False)
-        self.embed.add_field(name="**Answer III**", value="0.0", inline=False)
+        self.embed.add_field(name="**Answer 1️⃣**", value="0.0", inline=False)
+        self.embed.add_field(name="**Answer 2️⃣**", value="0.0", inline=False)
+        self.embed.add_field(name="**Answer 3️⃣**", value="0.0", inline=False)
         self.embed.add_field(name="Best Answer",value="<a:loading:695158657565851658>")
         self.embed.set_footer(text=f"Daman saini#0605", \
             icon_url="https://cdn.discordapp.com/emojis/65144659163194133.gif?v=1")
@@ -193,9 +193,9 @@ class Bot(discord.Client):
 #             if answer == 3:
 #                 three_check = ":x:"            
  
-        self.embed.set_field_at(0, name="**Answer I**", value="{0}{1}".format(lst_scores[0], one_check))
-        self.embed.set_field_at(1, name="**Answer II**", value="{0}{1}".format(lst_scores[1], two_check))
-        self.embed.set_field_at(2, name="**Answer III**", value="{0}{1}".format(lst_scores[2],three_check))
+        self.embed.set_field_at(0, name="**Answer 1️⃣**", value="{0}{1}".format(lst_scores[0], one_check))
+        self.embed.set_field_at(1, name="**Answer 2️⃣**", value="{0}{1}".format(lst_scores[1], two_check))
+        self.embed.set_field_at(2, name="**Answer 3️⃣**", value="{0}{1}".format(lst_scores[2],three_check))
         self.embed.set_field_at(3,name="Best Answer",value=best_answer)
 
         if self.embed_msg is not None:
@@ -203,14 +203,14 @@ class Bot(discord.Client):
 
     async def on_ready(self):
         print("==============")
-        print("HQ")
+        print("Moolah")
         print("Connected to discord.")
         print("User: " + self.user.name)
         print("ID: " + str(self.user.id))
 
         await self.clear_results()
         await self.update_embeds()
-        await self.change_presence(activity=discord.Game(name='Hq is Live with daman saini#0605...'))
+        await self.change_presence(activity=discord.Game(name='Moolah is Live with daman saini#0605...'))
 
     async def on_message(self, message):
 
@@ -218,7 +218,7 @@ class Bot(discord.Client):
         if message.author == self.user or message.guild == None:
             return
 
-        if message.content.lower() == "h":
+        if message.content.lower() == "ml":
             await message.delete()
             if BOT_OWNER_ROLE in [role.name for role in message.author.roles]:
                 self.embed_msg = None
@@ -226,9 +226,9 @@ class Bot(discord.Client):
                 await self.update_embeds()
                 self.embed_msg = \
                     await message.channel.send('',embed=self.embed)
-                await self.embed_msg.add_reaction("✅")
+                await self.embed_msg.add_reaction("😍")
                 #await self.embed_msg.add_reaction("âœ”")
-                await self.embed_msg.add_reaction("❎")
+                await self.embed_msg.add_reaction("🤩")
                 #await self.embed_msg.add_reaction("âœ”")
                 self.embed_channel_id = message.channel.id
 
@@ -238,9 +238,9 @@ class Bot(discord.Client):
 
         if message.content.startswith('&help'):
           if BOT_OWNER_ROLE in [role.name for role in message.author.roles]:
-           embed = discord.Embed(title="**__HQ__**", description="**Private Bot**", color=0x0000FF)
-           embed.add_field(name="__Game__", value="*HQ Live*", inline=False)
-           embed.add_field(name="__Bot Command__", value="h", inline=False)
+           embed = discord.Embed(title="**__Moolah__**", description="**Private Bot**", color=0x0000FF)
+           embed.add_field(name="__Game__", value="*Moolah Live*", inline=False)
+           embed.add_field(name="__Bot Command__", value="ml", inline=False)
            embed.add_field(name="__Made By__", value="*Anonymous*", inline=False)
            await message.channel.send(embed=embed)
 
@@ -268,7 +268,7 @@ def bot_with_cyclic_update_process(update_event, answer_scores):
     upd_thread.start()
 
     loop = asyncio.get_event_loop()
-    loop.create_task(bot.start('NzQ5NTc4MDAxMTUwMTE1OTUw.X0uA6Q.vlUtls4baJGGYBCi-Xj7lRIX8qM'))
+    loop.create_task(bot.start('NzUwOTc5NTQwMjM0NTM0OTk3.X1CaMg.O8xul7lXbbXNo2OAgadAwTIc2P4'))
     loop.run_forever()
 
 
